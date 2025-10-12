@@ -22,7 +22,7 @@ npm run dev
 ---
 
 *Part of The Odin Project's [React Course]
-([https://www.theodinproject.com/lessons/node-path-react-shopping-cart])*
+([https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart])*
 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
