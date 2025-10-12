@@ -8,10 +8,15 @@ export default defineConfig({
     react({
       babel: {
         plugins: [
-          ['babel-plugin-react-compiler'],
-            tailwindcss(),
+          ['babel-plugin-react-compiler']
         ],
       },
     }),
+    tailwindcss(),
   ],
-})
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './tests/setup.js',
+  }
+});
