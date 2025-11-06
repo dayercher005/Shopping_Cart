@@ -9,11 +9,11 @@ const routes = [
         element: <Home />
     },
     {
-        path: "shop",
+        path: "Shop",
         element: <Shop />
     },
     {
-        path: "cart",
+        path: "Cart",
         element: <Cart />
     }
 ]
