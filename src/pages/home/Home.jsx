@@ -3,7 +3,8 @@ import ShoppingIcon from "/src/assets/ShoppingIcon.png"
 
 export default function Home() {
 
-    const HomeText="Your one-stop shop for everything you need!"
+    const HomeText = "Your one-stop shop for everything you need!"
+    const HomeSubtext = "Add your favorite items to the cart and review them anytime before making your purchase."
 
     return (
 
@@ -12,9 +13,12 @@ export default function Home() {
                 <Navbar></Navbar>
             </div>
 
-            <div className="flex justify-center items-center pt-100 gap-20">
+            <div className="flex justify-center items-center pt-100 gap-20 ">
                 <img className="size-75" src={ShoppingIcon}></img>
-                <p className="text-4xl font-Caveat font-bold">{HomeText}</p>
+                <div>
+                    <h1 className="text-6xl font-Caveat font-bold pb-5">{HomeText}</h1>
+                    <h2 className="text-3xl font-Caveat">{HomeSubtext}</h2>
+                </div>
             </div>
         </div>
 

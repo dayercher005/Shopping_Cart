@@ -5,6 +5,12 @@
   src: local(Caveat), url(./assets/Caveat-VariableFont_wght.ttf)
 }
 
+@font-face{
+  font-family: MomoSignature;
+  src: local(MomoSignature), url(./assets/MomoSignature-Regular.ttf)
+}
+
 @theme{
-  --font-Caveat: Caveat
+  --font-Caveat: Caveat;
+  --font-MomoSignature: MomoSignature;
 }
