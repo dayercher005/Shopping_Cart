@@ -12,15 +12,19 @@ const routes = [
         children: [
             {
                 path: "About",
-                element: <About />
+                element: <About />,
+                index: true,
+                errorElement: <Error />
             },
             {
                 path: "Shop",
-                element: <Shop />
+                element: <Shop />,
+                errorElement: <Error />
             },
             {
                 path: "Cart",
-                element: <Cart />
+                element: <Cart />,
+                errorElement: <Error />
             }
         ],
         errorElement: <Error />
