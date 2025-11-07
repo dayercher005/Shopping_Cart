@@ -1,5 +1,9 @@
 # Shopping Cart
-Live Preview:
+Live Preview URL:
+
+API: Fake Store API
+
+API URL: https://fakestoreapi.com/
 
 ## How to Run
 
