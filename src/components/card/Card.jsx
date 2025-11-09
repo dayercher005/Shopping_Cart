@@ -1,4 +1,5 @@
 import { useState } from "react"
+import CartButton from "../cartButton/CartButton.jsx"
 
 export default function Card({name, price, image}){
 
@@ -17,15 +18,16 @@ export default function Card({name, price, image}){
     }
 
     return(
-        <div className="bg-white rounded-2xl hover:scale-105 w-100 transition">
-            <h1 className="text-4xl">{name}</h1>
-            <img className="size-50" src={image}></img>
-            <p className="text-3xl text-center">USD {price}</p>
-            <div className="flex justify-center">
-                <button className="" onClick={addQuantity}> + </button>
-                <p className="">{quantity}</p>
-                <button className="" onClick={reduceQuantity}> - </button>
+        <div className="flex flex-col bg-white rounded-2xl hover:scale-105 w-100 transition gap-4 max-w-80 hover:shadow-xl">
+            <h1 className="text-3xl basis-1/3 font-Caveat text-center px-2">{name}</h1>
+            <img className="size-35 basis-1/3 mx-auto" src={image}></img>
+            <p className="text-3xl basis-1/6 text-center font-Caveat">USD {price}</p>
+            <div className="flex basis-1/6 justify-center gap-10 py-5">
+                <button className="rounded-full bg-green-400 size-10 text-2xl text-center hover:bg-green-500 hover:scale-110 transition hover:shadow-xl" onClick={addQuantity}> + </button>
+                <p className="text-center font-Caveat text-4xl">Qty: {quantity}</p>
+                <button className="rounded-full bg-green-400 size-10 text-2xl text-center hover:bg-green-500 hover:scale-110 transition hover:shadow-xl" onClick={reduceQuantity}> - </button>
             </div>
+            <CartButton></CartButton>
         </div>
     )
 }
