@@ -4,6 +4,8 @@ import Card from "/src/components/card/Card.jsx"
 export default function Shop() {
 
     const [shop, setShop] = useState([])
+    const [error, setError] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
 
@@ -11,8 +13,8 @@ export default function Shop() {
 
         async function APICaller() {
             try{
-                for(let index = 1; index < 15; index+=1){
-                    const itemScript = await fetch(`https://fakestoreapi.com/products/${index}`)
+                for(let index = 1; index < 18; index+=1){
+                    const itemScript = await fetch(`https://fakestoreapi.com/products/${index}`, { mode: "cors" })
                     const itemData = await itemScript.json()
                     const itemName = itemData.title
                     const itemPrice = itemData.price
@@ -22,9 +24,13 @@ export default function Shop() {
                         setShop(shop => [...shop, {name: itemName, price: itemPrice, image: itemImage}])
                     }
                 }
+
             }
             catch(error){
-                return error
+                setError(error)
+            }
+            finally{
+                setLoading(false)
             }
         }
 
@@ -39,8 +45,20 @@ export default function Shop() {
         <Card name={item.name} image={item.image} price={item.price}></Card>
     )
 
+    if (loading) return (
+        <div className="flex h-screen justify-center items-center bg-linear-to-br from-pink-500 to-sky-600">
+            <p className="font-Caveat text-7xl">Loading ...</p>
+        </div>
+    )
+    if (error) return (
+        <div className="flex h-screen justify-center items-center bg-linear-to-br from-pink-500 to-sky-600">
+            <p className="font-Caveat text-7xl">An error has been encountered</p>
+        </div>
+    
+    )
+
     return(
-        <div className="bg-linear-to-br from-pink-500 to-sky-600 h-screen grid grid-cols-5 gap-20">
+        <div className="bg-linear-to-br from-pink-500 to-sky-600 h-auto grid grid-cols-6 gap-20 mx-2 pb-4">
             {ShopItems}
         </div>
     )
