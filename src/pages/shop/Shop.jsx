@@ -1,4 +1,5 @@
-import {useState, useEffect} from "react"
+import { useState, useEffect } from "react"
+import { useOutletContext } from "react-router-dom"
 import Card from "/src/components/card/Card.jsx"
 
 export default function Shop() {
@@ -6,6 +7,7 @@ export default function Shop() {
     const [shop, setShop] = useState([])
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [cartItems, setCartItems] = useOutletContext()
 
     useEffect(() => {
 
@@ -44,6 +46,8 @@ export default function Shop() {
     const ShopItems = shop.map((item) => 
         <Card name={item.name} image={item.image} price={item.price}></Card>
     )
+
+
 
     if (loading) return (
         <div className="flex h-screen justify-center items-center bg-linear-to-br from-pink-500 to-sky-600">

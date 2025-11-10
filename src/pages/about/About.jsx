@@ -8,14 +8,14 @@ export default function About() {
 
     return (
 
-        <div className="h-screen">
-
-            <div className="flex justify-center items-center pt-100 gap-20 ">
-                <img className="size-75" src={ShoppingIcon}></img>
-                <div>
-                    <h1 className="text-6xl font-Caveat font-bold pb-5">{AboutText}</h1>
-                    <h2 className="text-3xl font-Caveat">{AboutSubtext}</h2>
-                </div>
+        <div className="h-screen items-center">
+            <div className="flex gap-20 justify-center items-center h-7/10">
+                    <img className="size-75 self-center" src={ShoppingIcon}></img>
+                    <div className="self-center">
+                        <h1 className="text-6xl font-Caveat font-bold pb-5">{AboutText}</h1>
+                        <h2 className="text-3xl font-Caveat">{AboutSubtext}</h2>
+                    </div>
+                
             </div>
         </div>
 
