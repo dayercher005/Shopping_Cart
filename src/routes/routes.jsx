@@ -11,7 +11,6 @@ const routes = [
         element: <Home />,
         children: [
             {
-                path: "About",
                 element: <About />,
                 index: true,
                 errorElement: <Error />

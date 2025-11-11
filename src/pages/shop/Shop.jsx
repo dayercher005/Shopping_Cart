@@ -47,6 +47,9 @@ export default function Shop() {
         <Card name={item.name} image={item.image} price={item.price}></Card>
     )
 
+    const CartChecker = () => {
+        
+    }
 
 
     if (loading) return (
