@@ -35,7 +35,7 @@ export default function Cart() {
                     <h1 className="flex-1/2 font-extrabold text-center font-Caveat text-5xl
                     border-t-4 border-t-neutral-400">Total Price:</h1>
                     <h1 className="flex-1/2 font-extrabold font-Caveat justify-self-end text-5xl 
-                    border-t-4 border-t-neutral-400">USD {priceCalculator}</h1>
+                    border-t-4 border-t-neutral-400">USD {priceCalculator.toFixed(2)}</h1>
                 </div>
             </div>
         </div>
