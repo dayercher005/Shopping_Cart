@@ -1,7 +1,7 @@
 import { useState } from "react"
 import CartButton from "../cartButton/CartButton.jsx"
 
-export default function Card({name, price, image}){
+export default function Card({clickHandler, name, price, image}){
 
     const [quantity, setQuantity] = useState(0)
 
@@ -13,8 +13,11 @@ export default function Card({name, price, image}){
         if (quantity <= 0){
             return
         }
-
         setQuantity(quantity => quantity -= 1)
+    }
+
+    const returnDetails = () => {
+        clickHandler(name, quantity, price)
     }
 
     return(
@@ -28,7 +31,7 @@ export default function Card({name, price, image}){
                 <input type="number" value={quantity} onChange={(event) => setQuantity(event.target.value)} className="h-8 w-15 font-Caveat text-2xl px-2 mx-3"/>
                 <button className="rounded-full bg-green-400 size-10 text-2xl text-center mx-2.5 hover:bg-green-500 hover:scale-110 transition hover:shadow-xl" onClick={reduceQuantity}> - </button>
             </div>
-            <CartButton name={name} price={price} quantity={quantity}></CartButton>
+            <CartButton onClick={returnDetails}></CartButton>
         </div>
     )
 }
