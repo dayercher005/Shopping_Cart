@@ -10,12 +10,9 @@ export default function Shop() {
     const [cartItems, setCartItems] = useOutletContext()
 
     const CartChecker = (itemName, itemQuantity, itemPrice) => {
-
         setCartItems(cartArray => cartArray.filter(item => item.name !== itemName))
-        
         setCartItems(cartArray => [...cartArray, {item: itemName, quantity: itemQuantity, price: itemPrice}])
-
-        setCartItems(cartArray => cartArray.filter(item => item.quantity !== itemQuantity))
+        setCartItems(cartArray => cartArray.filter(item => item.quantity !== 0))
     }
 
     useEffect(() => {

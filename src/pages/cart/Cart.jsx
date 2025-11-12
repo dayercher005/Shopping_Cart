@@ -12,11 +12,11 @@ export default function Cart() {
         </div>
     )
 
-    const priceCalculator = cartItems.map(item => {
-        let totalPrice = 0
-        totalPrice += (item.price * item.quantity)
-        return totalPrice 
-    })
+
+    const priceCalculator = cartItems.reduce((total, currentItem) => {
+        return total + (currentItem.price * currentItem.quantity);
+    }, 0);
+         
 
     return (
         <div className="bg-linear-to-br from-pink-500 to-sky-600 h-screen">
@@ -35,7 +35,7 @@ export default function Cart() {
                     <h1 className="flex-1/2 font-extrabold text-center font-Caveat text-5xl
                     border-t-4 border-t-neutral-400">Total Price:</h1>
                     <h1 className="flex-1/2 font-extrabold font-Caveat justify-self-end text-5xl 
-                    border-t-4 border-t-neutral-400">{priceCalculator}</h1>
+                    border-t-4 border-t-neutral-400">USD {priceCalculator}</h1>
                 </div>
             </div>
         </div>
