@@ -12,8 +12,10 @@ export default function Shop() {
     const CartChecker = (itemName, itemQuantity, itemPrice) => {
 
         setCartItems(cartArray => cartArray.filter(item => item.name !== itemName))
-
+        
         setCartItems(cartArray => [...cartArray, {item: itemName, quantity: itemQuantity, price: itemPrice}])
+
+        setCartItems(cartArray => cartArray.filter(item => item.quantity !== itemQuantity))
     }
 
     useEffect(() => {
@@ -33,11 +35,12 @@ export default function Shop() {
                         setShop(shop => [...shop, {name: itemName, price: itemPrice, image: itemImage}])
                     }
                 }
-
             }
+
             catch(error){
                 setError(error)
             }
+
             finally{
                 setLoading(false)
             }
