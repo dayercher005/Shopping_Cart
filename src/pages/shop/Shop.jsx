@@ -9,6 +9,13 @@ export default function Shop() {
     const [loading, setLoading] = useState(true)
     const [cartItems, setCartItems] = useOutletContext()
 
+    const CartChecker = (itemName, itemQuantity, itemPrice) => {
+
+        setCartItems(cartArray => cartArray.filter(item => item.name !== itemName))
+
+        setCartItems(cartArray => [...cartArray, {item: itemName, quantity: itemQuantity, price: itemPrice}])
+    }
+
     useEffect(() => {
 
         let ignore = false
@@ -44,12 +51,10 @@ export default function Shop() {
     }, [])
 
     const ShopItems = shop.map((item) => 
-        <Card name={item.name} image={item.image} price={item.price}></Card>
+        <Card clickHandler={CartChecker} name={item.name} image={item.image} price={item.price}></Card>
     )
 
-    const CartChecker = () => {
-        
-    }
+    
 
 
     if (loading) return (
