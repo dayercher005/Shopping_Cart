@@ -1,6 +1,10 @@
-import { binIcon } from "src/assets/bin.svg"
+import binIcon from "/src/assets/bin.svg"
 
-export default function Item({name, quantity, price, removeHandler}) {
+export default function Item({name, quantity, price, CartItemsHandler}) {
+
+    const removeHandler = () => {
+        CartItemsHandler(name)
+    }
 
     return(
         <div className="flex justify-center">
