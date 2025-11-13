@@ -1,5 +1,5 @@
 
-import ShoppingIcon from "/src/assets/ShoppingIcon.png"
+import ShoppingIcon from "/ShoppingIcon.png"
 
 export default function About() {
 

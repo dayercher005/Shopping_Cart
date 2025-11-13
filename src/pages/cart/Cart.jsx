@@ -6,7 +6,7 @@ export default function Cart() {
 
     const cartList = cartItems.map(item => 
         <div className="flex justify-center">
-            <h1 className="flex-5/10 font-Caveat text-3xl p-2.5">{item.item}</h1>
+            <h1 className="flex-5/10 font-Caveat text-3xl p-2.5">{item.name}</h1>
             <p className="flex-3/10 font-Caveat text-3xl p-2.5">{item.quantity}</p>
             <p className="flex-2/10 font-Caveat text-3xl p-2.5">USD {item.quantity * item.price}</p>
         </div>

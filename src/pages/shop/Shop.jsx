@@ -10,8 +10,15 @@ export default function Shop() {
     const [cartItems, setCartItems] = useOutletContext()
 
     const CartChecker = (itemName, itemQuantity, itemPrice) => {
-        setCartItems(cartArray => cartArray.filter(item => item.name !== itemName))
-        setCartItems(cartArray => [...cartArray, {item: itemName, quantity: itemQuantity, price: itemPrice}])
+
+        if(cartItems.some(item => item.name === itemName) === true){
+            const itemIndex = cartItems.findIndex(item => item.name === itemName)
+            const previousQuantity = cartItems[itemIndex].quantity
+            setCartItems(cartArray => cartArray.filter(item => item.name !== itemName))
+            setCartItems(cartArray => [...cartArray, {name: itemName, quantity: itemQuantity + previousQuantity, price: itemPrice}])
+        } else {
+            setCartItems(cartArray => [...cartArray, {name: itemName, quantity: itemQuantity, price: itemPrice}])
+        }
         setCartItems(cartArray => cartArray.filter(item => item.quantity !== 0))
     }
 
