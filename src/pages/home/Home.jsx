@@ -6,10 +6,17 @@ export default function Home() {
 
     const [cartItems, setCartItems] = React.useState([])
 
+    const cartQuantity = cartItems.reduce((totalQuantity, item) => {
+       return totalQuantity + item.quantity
+    }, 0)
+
     return(
         <div className="h-auto bg-linear-to-br from-pink-500 to-sky-600">
-            <div className="flex justify-center">
+            <div className="flex justify-center items-center">
                 <Navbar></Navbar>
+                <div>
+                    <p className="rounded-xl text-center bg-white font-MomoSignature p-2">Items: {cartQuantity}</p>
+                </div>
             </div>
 
             <Outlet context={[cartItems, setCartItems]}/>
