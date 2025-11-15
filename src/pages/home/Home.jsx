@@ -1,5 +1,5 @@
 import React from 'react'
-import {Navbar} from "/src/components/navbar/Navbar.jsx"
+import Navbar from "/src/components/navbar/Navbar.jsx"
 import { Outlet } from 'react-router'
 
 export default function Home() {
