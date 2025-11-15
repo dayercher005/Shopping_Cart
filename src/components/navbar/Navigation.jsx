@@ -1,6 +1,6 @@
 import NavButton from './NavButton.jsx'
 
-export default function Navbar(){
+export default function Navigation(){
     
     return(
         <div className="py-5">

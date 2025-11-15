@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '/src/components/navbar/Navbar.jsx'
+import Navigation from '/src/components/navbar/Navigation.jsx'
 import { Outlet } from 'react-router'
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
     return(
         <div className="h-auto bg-linear-to-br from-pink-500 to-sky-600">
             <div className="flex justify-center items-center">
-                <Navbar></Navbar>
+                <Navigation></Navigation>
                 <div>
                     <p className="rounded-xl text-center bg-white font-MomoSignature p-2">Items: {cartQuantity}</p>
                 </div>
