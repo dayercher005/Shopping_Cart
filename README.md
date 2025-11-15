@@ -1,5 +1,5 @@
 # Shopping Cart
-Live Preview URL:
+Live Preview URL: https://shopping-cart-eight-sigma-58.vercel.app
 
 API: Fake Store API
 
