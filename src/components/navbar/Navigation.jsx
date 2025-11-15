@@ -1,4 +1,4 @@
-import NavButton from './NavButton.jsx'
+import NavButton from '/src/components/navbar/NavButton.jsx'
 
 export default function Navigation(){
     
