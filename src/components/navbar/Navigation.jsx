@@ -1,12 +1,12 @@
-import NavButton from '/src/components/navbar/NavButton.jsx'
+import Navigationbutton from '/src/components/navbar/Navigationbutton.jsx'
 
 export default function Navigation(){
     
     return(
         <div className="py-5">
-            <NavButton name="About" link="/"></NavButton>
-            <NavButton name="Shop" link="Shop"></NavButton>
-            <NavButton name="Cart" link="Cart"></NavButton>
+            <Navigationbutton name="About" link="/"></Navigationbutton>
+            <Navigationbutton name="Shop" link="Shop"></Navigationbutton>
+            <Navigationbutton name="Cart" link="Cart"></Navigationbutton>
         </div>
     )
 }

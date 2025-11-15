@@ -1,6 +1,6 @@
 import { Link } from "react-router"
 
-export default function NavButton({name, link}) {
+export default function Navigationbutton({name, link}) {
 
     return(
         <Link to={link}>
